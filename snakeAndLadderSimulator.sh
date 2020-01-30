@@ -1,1 +1,5 @@
 echo "WELCOME TO SNAKE AND LADDER SIMULATOR"
+#constants
+START_POSITION=0
+#variable
+playerOnePosition=$START_POSITION
