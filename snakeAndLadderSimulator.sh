@@ -22,6 +22,10 @@ function checkForOptionsNoplayLadderOrSnake () {
 	elif [ $option -eq $LADDER ]
 	then
 		playerOnePosition=$(($playerOnePosition + $numberOnDice))
+		if [ $playerOnePosition -gt $WINNING_POSITION ]
+		then
+			playerOnePosition=$(($playerOnePosition - $numberOnDice))
+		fi
 	elif [ $option -eq $SNAKE ]
 	then
 		playerOnePosition=$(($playerOnePosition - $numberOnDice))
