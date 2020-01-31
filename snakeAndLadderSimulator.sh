@@ -1,4 +1,4 @@
-#!/bin/bash -x
+#!/bin/bash 
 echo "WELCOME TO SNAKE AND LADDER SIMULATOR"
 #constants
 START_POSITION=0
@@ -8,11 +8,12 @@ SNAKE=2
 WINNING_POSITION=100
 #variable
 playerOnePosition=$START_POSITION
-
+diceCount=0
 function rollingDice () {
 	numberOnDice=$(($((RANDOM%6))+1))
 	echo "Number after rolling the dice : $numberOnDice"
 	checkForOptionsNoplayLadderOrSnake
+	((diceCount++))
 }
 function checkForOptionsNoplayLadderOrSnake () {
 	option=$((RANDOM%3))
@@ -43,3 +44,4 @@ function repeatingTillWinningPosition () {
 	done
 }
 repeatingTillWinningPosition
+echo "Number of Time Dice Tossed for Winning: $diceCount"
